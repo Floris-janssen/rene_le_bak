@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rene le Bak</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Scherm 1: kans instellen -->
+  <section id="screen-setup" class="screen active">
+    <div class="card">
+      <h1 class="title">Rene le Bak</h1>
+      <p class="subtitle">Stel je kans in en laat het lot beslissen.</p>
+
+      <div class="photo-frame">
+        <img id="jaarclub-img" src="jaarclubOrig (1).png" alt="Jaarclub foto" />
+      </div>
+
+      <div class="chance-box">
+        <div class="chance-label">
+          <span>Kans op <strong>René</strong></span>
+          <span class="chance-value">1 op <span id="chance-value">5</span></span>
+        </div>
+
+        <div class="chance-control">
+          <button id="chance-minus" class="step-btn" type="button" aria-label="Kans verlagen">−</button>
+          <input type="range" id="chance" min="1" max="10" step="1" value="5" />
+          <button id="chance-plus" class="step-btn" type="button" aria-label="Kans verhogen">+</button>
+        </div>
+
+        <p class="hint">Bij "1 op 1" speelt altijd René. Bij "1 op 10" speelt René 1 op de 10 keer.</p>
+      </div>
+
+      <button id="btn-start" class="btn btn-primary">Start spel</button>
+    </div>
+  </section>
+
+  <!-- Scherm 2: spel -->
+  <section id="screen-game" class="screen">
+    <div class="card">
+      <h1 class="title title-small">Rene le Bak</h1>
+
+      <div id="result-box" class="result-box">
+        <img id="result-image" src="" alt="Uitslag" hidden />
+        <div id="result-text" class="result-text">Klaar om te spelen?</div>
+      </div>
+
+      <p class="counter">René al <span id="miss-count">0</span> keer niet geweest</p>
+
+      <button id="btn-play" class="btn btn-primary btn-big">Speel</button>
+      <button id="btn-pause" class="btn btn-secondary">Pauze</button>
+      <button id="btn-back" class="btn btn-ghost">Kans aanpassen</button>
+
+      <p class="audio-warning" id="audio-warning" hidden>
+        Audio niet gevonden. Plaats <code>audio/rene-le-blanc.mp3</code> en
+        <code>audio/solid-stigma.mp3</code>.
+      </p>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,279 @@
+:root {
+  --bg: #00052D;
+  --bg-soft: #0f2238;
+  --card: #12263d;
+  --card-border: #1d3a58;
+  --text: #eaf2fb;
+  --muted: #8fa8c2;
+  --accent: #3d8bfd;
+  --accent-hover: #2f7ae8;
+  --rene: #67d8f0;
+  --stigma: #f2a3b8;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.screen {
+  display: none;
+  width: 100%;
+  max-width: 480px;
+}
+
+.screen.active {
+  display: block;
+  animation: fadeIn 0.25s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 32px 28px;
+  text-align: center;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin-bottom: 4px;
+}
+
+.title-small {
+  font-size: 1.4rem;
+  margin-bottom: 16px;
+}
+
+.subtitle {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+}
+
+.photo-frame {
+  margin: 0 0 24px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--card-border);
+  background: var(--bg-soft);
+  aspect-ratio: 16 / 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.chance-box {
+  margin-bottom: 24px;
+}
+
+.chance-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 12px;
+}
+
+.chance-label strong {
+  color: var(--rene);
+  font-weight: 700;
+}
+
+.chance-value {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.chance-control {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.step-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid var(--card-border);
+  background: var(--bg-soft);
+  color: var(--text);
+  font-size: 1.3rem;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.step-btn:hover {
+  border-color: var(--accent);
+}
+
+#chance {
+  flex: 1;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+.hint {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.btn {
+  border: none;
+  border-radius: 10px;
+  padding: 14px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.15s ease;
+  width: 100%;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: var(--accent-hover);
+}
+
+.btn-big {
+  padding: 18px 24px;
+  font-size: 1.15rem;
+  margin-bottom: 10px;
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid var(--card-border);
+  font-size: 0.9rem;
+}
+
+.btn-ghost:hover {
+  color: var(--text);
+  border-color: var(--muted);
+}
+
+.btn-secondary {
+  background: var(--bg-soft);
+  color: var(--text);
+  border: 1px solid var(--card-border);
+  margin-bottom: 10px;
+}
+
+.btn-secondary:hover {
+  border-color: var(--accent);
+}
+
+.result-box {
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 16px;
+  background: var(--bg-soft);
+  margin-bottom: 20px;
+}
+
+.result-box img {
+  max-width: 100%;
+  max-height: 180px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.result-text {
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.result-text.rene {
+  color: var(--rene);
+}
+
+.result-text.stigma {
+  color: var(--stigma);
+}
+
+.audio-warning {
+  color: #f2c14e;
+  font-size: 0.8rem;
+  margin-top: 12px;
+}
+
+code {
+  background: rgba(255, 255, 255, 0.06);
+  padding: 2px 6px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+}
+
+.counter {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin: 0 0 12px;
+}
+
+.counter span {
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* Klik-animatie: knop indrukken */
+.btn-big.pressed {
+  animation: press 0.2s ease;
+}
+
+@keyframes press {
+  0% { transform: scale(1); }
+  50% { transform: scale(0.94); }
+  100% { transform: scale(1); }
+}
+
+/* Klik-animatie: resultaatvak flitst */
+.result-box.flash {
+  animation: boxFlash 0.3s ease;
+}
+
+@keyframes boxFlash {
+  0% { border-color: var(--card-border); }
+  50% { border-color: var(--accent); }
+  100% { border-color: var(--card-border); }
+}

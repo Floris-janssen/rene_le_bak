@@ -1,0 +1,4 @@
+Plaats hier je afbeeldingen:
+- jaarclub.jpg (of jaarclub.png) — foto op de startpagina
+- rene.png — foto bij René
+- solid-stigma.png — foto bij Solid Stigma
