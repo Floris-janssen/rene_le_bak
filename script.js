@@ -116,6 +116,7 @@ function playRound() {
   const audio = isRene ? reneAudio : stigmaAudio;
   currentAudio = audio;
   btnPause.textContent = "Pauze";
+  audio.currentTime = 0.5; // start 0,5 seconde verder zodat het nummer sneller begint
   audio.play().catch(() => {
     audioWarning.hidden = false;
   });
